@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+    </head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <body>
+        <h4>My balance <br>
+            $921.48
+        </h4>
+        
+        <canvas id="myChart" style="width:100%;max-width:400px"></canvas>
+        <script>
+            var xValues = ["mon", "tue", "web", "thu", "fri" , "sat", "sun"];
+            var yValues = [17.45, 34.91, 52.36, 31.07, 23.39, 43.28, 25.48];
+            var barColors = ["orange", "orange","green","orange","orange","orange","orange"];
+            
+            new Chart("myChart", {
+              type: "bar",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  backgroundColor: barColors,
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {display: false},
+                title: {
+                  display: true,
+                  text: "Spending - Last 7 days"
+                }
+              }
+            });
+            </script>
+            <h5> 
+                Total this month
+            </h5> 
+            <h2>$478.33</h2>
+    </body>
+</html>
